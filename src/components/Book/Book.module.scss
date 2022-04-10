@@ -1,0 +1,79 @@
+@import "./../../assets/mixins.scss";
+@import "./../../assets/palette.scss";
+
+.Book {
+    border: 1px solid $black;
+    border-radius: 30px;
+    height: 450px;
+    @include flex($flx-dir: column, $just-cont: space-between);
+    padding-bottom: 10px;
+    // background: url("./../../images/images.jpg");
+    // &__Preview {
+    //     position: relative;
+    //     @include height-and-width(450px, 430px);
+    //     @include flex($flx-dir: column, $just-cont: space-around);
+    // }
+
+    &__Image {
+        border-radius: 10%;
+    }
+    &__Title {
+        font-family: $heading-font;
+        @include text-style(18px, 800, 24px);
+    }
+
+    &__Author {
+        font-family: $body-font;
+        @include text-style(16px, 500, 27px);
+    }
+
+    // &__DescriptionContainer {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     background: white;
+    //     @include flex($flx-dir: column, $just-cont: center);
+    //     @include height-and-width(100%, 100%);
+    //     opacity: 0;
+    //     transition: opacity 0.25s;
+    //     border-radius: 30px;
+    //     padding: 30px;
+    // }
+
+    // // Target every child in our container
+    // &__DescriptionContainer > * {
+    //     transform: translateY(100%);
+    //     transition: transform 0.25s;
+    // }
+
+    // &__DescriptionContainer:hover {
+    //     opacity: 1;
+    // }
+
+    // &__DescriptionContainer:hover > * {
+    //     transform: translateY(0);
+    // }
+
+    // &__Description {
+    //     font-family: $body-font;
+    //     @include text-style(5px, 300, 16px);
+    // }
+
+    &__Details {
+        border: 1px solid $search-border;
+        border-radius: 30px;
+        padding: 10px;
+    }
+    &__Details:hover {
+        box-shadow: 0 0 10px $box-shadow;
+    }
+}
+
+.savedBook {
+    &__On {
+        color: red;
+    }
+    &__Off {
+        color: navy;
+    }
+}

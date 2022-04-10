@@ -1,0 +1,6 @@
+@import "./assets/mixins.scss";
+@import "./assets/palette.scss";
+
+.App {
+    @include padding-and-margin(0, 0);
+}

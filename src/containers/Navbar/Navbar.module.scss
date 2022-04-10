@@ -1,0 +1,29 @@
+@import "./../../assets/mixins.scss";
+@import "./../../assets/palette.scss";
+
+.Navbar {
+    position: fixed;
+    transition: all 0.5s;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    width: 100%;
+    @include flex($just-cont: flex-end);
+    height: 5%;
+
+    &__List {
+        list-style-type: none;
+    }
+
+    &__Links {
+        margin: 50px;
+        color: $black;
+        @include text-style(14px, 400, 18px, $spacing: 0.02em);
+        font-family: $heading-font;
+    }
+
+    &__Links:hover {
+        border-bottom: 1px solid $black;
+    }
+}

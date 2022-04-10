@@ -1,0 +1,42 @@
+@import "./../../assets/mixins.scss";
+@import "./../../assets/palette.scss";
+
+.Searchbar {
+    @include flex($just-cont: center, $flx-dir: column);
+    min-height: 45vh;
+    background: url("./../../images/book.jpg");
+    background-size: cover;
+    // background-position: center;
+    background-repeat: no-repeat;
+
+    &__Container {
+        @include flex;
+        gap: 10px;
+        border: 1px solid $search-border;
+        border-radius: 30px;
+        padding: 10px;
+        width: 584px;
+    }
+
+    &__Container:hover {
+        box-shadow: 0 0 10px $box-shadow;
+    }
+
+    &__Label {
+        font-family: $body-font;
+        margin-bottom: 15px;
+        @include text-style(18px, 400, 27px, $spacing: 0.02em);
+    }
+
+    &__Icon {
+        color: $box-shadow;
+    }
+
+    &__Input {
+        border: none;
+        outline: none;
+        width: 100%;
+        @include text-style(16px, 300, 27px, $spacing: 0.02em);
+        font-family: $body-font;
+    }
+}
