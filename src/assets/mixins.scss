@@ -2,14 +2,14 @@
     $just-cont: space-between,
     $align-itm: center,
     $flx-dir: row,
-    $text-align: center,
+
     $flex-wrap: nowrap
 ) {
     display: flex;
     justify-content: $just-cont;
     align-items: $align-itm;
     flex-direction: $flx-dir;
-    text-align: $text-align;
+
     flex-wrap: $flex-wrap;
 }
 
@@ -24,7 +24,8 @@
     $height,
     $spacing: 0.02em,
     $transform: none,
-    $decoration: none
+    $decoration: none,
+    $text-align: none
 ) {
     font-size: $size;
     font-weight: $weight;
@@ -32,6 +33,7 @@
     letter-spacing: $spacing;
     text-transform: $transform;
     text-decoration: $decoration;
+    text-align: $text-align;
 }
 
 @mixin padding-and-margin($padding, $margin) {

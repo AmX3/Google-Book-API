@@ -1,4 +1,5 @@
 import Book from "../../components/Book";
+import Footer from "../Footer";
 import styles from "./BookList.module.scss";
 
 // We want to dynamically render multiple presentational book components depending on the data set, google api provide we have
@@ -21,6 +22,7 @@ const BookList = ({ books, toggleBookmark }) => {
                     );
                 })}
             </div>
+            <Footer />
         </div>
     );
 };

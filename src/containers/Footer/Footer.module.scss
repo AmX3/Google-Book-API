@@ -1,0 +1,16 @@
+@import "./../../assets/mixins.scss";
+@import "./../../assets/palette.scss";
+
+.Footer {
+    margin-top: 50px;
+    height: 30px;
+
+    @include flex($just-cont: center);
+    font-family: $body-font;
+    @include text-style(16px, 400, 27px, $decoration: underline);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0 0 10px $box-shadow;
+}

@@ -1,6 +1,10 @@
 @import "./assets/mixins.scss";
 @import "./assets/palette.scss";
 
-.App {
+* {
+    box-sizing: border-box;
     @include padding-and-margin(0, 0);
+}
+.App {
+    min-height: 100%;
 }

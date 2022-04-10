@@ -4,11 +4,12 @@ import Google from "./../../images/googlelogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const Searchbar = ({ onSubmit }) => {
+const Searchbar = ({ onSubmit, setSearch }) => {
     // Tracking changes in searchbar
     const [searchValue, setSearchValue] = useState("");
     // function that update the state of the value using the state searchValue variable
     const handleSearchChange = (e) => {
+        setSearch(e.target.value);
         setSearchValue(e.target.value);
     };
     const handleResult = () => {
@@ -27,6 +28,7 @@ const Searchbar = ({ onSubmit }) => {
                     className={styles.Searchbar__Input}
                     id="searchInput"
                     type="text"
+                    value={searchValue}
                     onChange={handleSearchChange}></input>
                 <FontAwesomeIcon
                     icon={faMagnifyingGlass}

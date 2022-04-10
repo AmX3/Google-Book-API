@@ -2,68 +2,48 @@
 @import "./../../assets/palette.scss";
 
 .Book {
-    border: 1px solid $black;
     border-radius: 30px;
-    height: 450px;
-    @include flex($flx-dir: column, $just-cont: space-between);
-    padding-bottom: 10px;
-    // background: url("./../../images/images.jpg");
-    // &__Preview {
-    //     position: relative;
-    //     @include height-and-width(450px, 430px);
-    //     @include flex($flx-dir: column, $just-cont: space-around);
-    // }
+    @include flex($flx-dir: column, $just-cont: space-evenly);
+    transition: all 0.25s;
+    border: 1px solid $search-border;
+    padding: 15px;
+
+    &__Bookmark {
+        float: left;
+    }
 
     &__Image {
         border-radius: 10%;
+        height: 250px;
+        width: 200px;
     }
+
     &__Title {
-        font-family: $heading-font;
-        @include text-style(18px, 800, 24px);
+        font-family: $navbar-font;
+        @include text-style(18px, bold, 27px);
     }
 
     &__Author {
         font-family: $body-font;
         @include text-style(16px, 500, 27px);
     }
+    &__Info {
+        font-family: $body-font;
+        @include flex($just-cont: space-evenly);
+        width: 100%;
+    }
 
-    // &__DescriptionContainer {
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     background: white;
-    //     @include flex($flx-dir: column, $just-cont: center);
-    //     @include height-and-width(100%, 100%);
-    //     opacity: 0;
-    //     transition: opacity 0.25s;
-    //     border-radius: 30px;
-    //     padding: 30px;
-    // }
-
-    // // Target every child in our container
-    // &__DescriptionContainer > * {
-    //     transform: translateY(100%);
-    //     transition: transform 0.25s;
-    // }
-
-    // &__DescriptionContainer:hover {
-    //     opacity: 1;
-    // }
-
-    // &__DescriptionContainer:hover > * {
-    //     transform: translateY(0);
-    // }
-
-    // &__Description {
-    //     font-family: $body-font;
-    //     @include text-style(5px, 300, 16px);
-    // }
+    &__Description {
+        font-family: $body-font;
+        @include text-style(15px, 300, 27px);
+    }
 
     &__Details {
         border: 1px solid $search-border;
         border-radius: 30px;
         padding: 10px;
     }
+
     &__Details:hover {
         box-shadow: 0 0 10px $box-shadow;
     }
@@ -76,4 +56,36 @@
     &__Off {
         color: navy;
     }
+}
+
+.BookModal {
+    &__Close {
+        float: right;
+    }
+    &__Heading {
+        margin: 40px 0;
+    }
+
+    &__Container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+
+        // background: url("./../../images/modal.jpg");
+    }
+    &__Image {
+        height: 300px;
+        width: 300px;
+    }
+    &__Info {
+        font-family: $body-font;
+        @include text-style(16px, 300, 27px);
+    }
+    &__Desc {
+        margin: 40px 0;
+    }
+}
+
+.Book:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px $box-shadow;
 }
