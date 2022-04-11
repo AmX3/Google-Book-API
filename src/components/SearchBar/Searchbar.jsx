@@ -12,13 +12,14 @@ const Searchbar = ({ onSubmit, setSearch }) => {
         setSearch(e.target.value);
         setSearchValue(e.target.value);
     };
+
     const handleResult = () => {
         onSubmit(searchValue);
     };
+
     return (
         <form className={styles.Searchbar}>
             <img src={Google} alt="googleLogo" className={styles.Home__Image} />
-
             <label className={styles.Searchbar__Label} htmlFor="searchInput">
                 Search for a Book:
             </label>

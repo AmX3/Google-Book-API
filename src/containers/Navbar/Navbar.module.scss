@@ -10,6 +10,7 @@
     width: 100%;
     @include flex($just-cont: flex-end);
     height: 5%;
+    background: $navbar-background;
 
     &__List {
         list-style-type: none;

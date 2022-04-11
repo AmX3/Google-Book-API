@@ -11,23 +11,17 @@ const Book = ({ book, toggleBookmark }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    // changing the color of the icon
+    // Changing the color of the icon
     const savedBookStyle = book.isSelected
         ? styles.savedBook__On
         : styles.savedBook__Off;
-    // const bookmark = {
-    //     color: savedBookStyle,
-    //     position: "bookmark",
-    // };
-    // const classes = isRed
-    //     ? [styles.Card, styles.Card__border_red]
-    //     : [styles.Card];
-    // handlebook is going to trigger our togglebookmark with a specific book.
+
+    // This function is going to trigger our togglebookmark with a specific book.
     const handleBook = () => {
         toggleBookmark(book);
     };
 
-    // dealing with missing title, description and authors
+    // MULTIPLE CHECKS
     const image =
         book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail
             ? book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail
@@ -61,6 +55,7 @@ const Book = ({ book, toggleBookmark }) => {
         ? book.volumeInfo.ratingCount
         : "None";
 
+    // If image or description is missing, we dont return it
     if (!image || !shortDescription) {
         return;
     }

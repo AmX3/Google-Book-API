@@ -3,7 +3,7 @@ const Footer = () => {
     return (
         <div className={styles.Footer}>
             <p>
-                Built by
+                Built by:{" "}
                 <a
                     className={styles.Footer__Link}
                     href="https://amx3.github.io/Personal-Portfolio/"

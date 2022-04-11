@@ -5,14 +5,13 @@ import Searchbar from "./components/SearchBar/Searchbar";
 import BookList from "./containers/BookList/BookList";
 import SavedBook from "./containers/SavedBook/SavedBook";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Footer from "./containers/Footer";
 
 const App = () => {
-    //every single bookitem in our array, plus a function that updates every single book => search state variable
+    //    STATE VARIABLES - tracking of search input and book
     const [searchBookItem, setSearchBookItem] = useState("");
-    // books state variable
     const [books, setBook] = useState([]);
-    // Change the value of searchTerm to the Google Book API Base URL + searchTerm entered into the input field by the user so it can be used to collect book data
+
+    // Set searchTerm to the Google Book API Base URL + the searchTerm given by the user in the input form so that it may be utilised to collect data from server. This is returned in json format and we only want items from bookdata.
     const getBook = async (newSearchBook) => {
         const BASE_URL = "https://www.googleapis.com/books/v1/volumes?q=";
         const response = await fetch(
@@ -21,7 +20,8 @@ const App = () => {
         const bookdata = await response.json();
         setBook(bookdata.items);
     };
-    // map through each book, and if the bookid is not equal to the selected book, we return the current book or added to saved books (destructure our object, and add a new key)
+
+    // Map through each book, and if the bookid is not equal to the selected book, we return the current book or it is added to saved books (destructuring of book object, and adding a new key that returns a value of true/false if selected)
     const toggleBookmark = (selectedBook) => {
         setBook(
             books.map((book) => {
@@ -32,10 +32,12 @@ const App = () => {
         );
     };
 
+    // Updates search everytime a user types
     const handleSubmit = (search) => {
         setSearchBookItem(search);
     };
 
+    // On app mount, when watching for any changes in our searchterm, if searchterm is not an empty string or is undefined, we fetch book data
     useEffect(() => {
         if (searchBookItem !== "" || undefined) {
             getBook(searchBookItem);
@@ -45,7 +47,7 @@ const App = () => {
 
     return (
         <div className={styles.App}>
-            <BrowserRouter>
+            <BrowserRouter basename="/Google-Book-API">
                 <Navbar />
                 <Routes>
                     <Route
@@ -56,7 +58,6 @@ const App = () => {
                                     onSubmit={handleSubmit}
                                     setSearch={setSearchBookItem}
                                 />
-
                                 <BookList
                                     books={books}
                                     toggleBookmark={toggleBookmark}
