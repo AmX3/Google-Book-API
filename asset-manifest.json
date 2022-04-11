@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/Google-Book-API/static/css/main.a9d630de.css",
-    "main.js": "/Google-Book-API/static/js/main.a62f14d5.js",
+    "main.css": "/Google-Book-API/static/css/main.ff7b731c.css",
+    "main.js": "/Google-Book-API/static/js/main.9faa41f9.js",
     "static/media/book.jpg": "/Google-Book-API/static/media/book.b38910b6e786949bfdb9.jpg",
+    "static/media/line.jpg": "/Google-Book-API/static/media/line.0a3b02838d768d582793.jpg",
     "static/media/cover.png": "/Google-Book-API/static/media/cover.e392538547ab9c4c1348.png",
     "index.html": "/Google-Book-API/index.html",
-    "main.a9d630de.css.map": "/Google-Book-API/static/css/main.a9d630de.css.map",
-    "main.a62f14d5.js.map": "/Google-Book-API/static/js/main.a62f14d5.js.map"
+    "main.ff7b731c.css.map": "/Google-Book-API/static/css/main.ff7b731c.css.map",
+    "main.9faa41f9.js.map": "/Google-Book-API/static/js/main.9faa41f9.js.map"
   },
   "entrypoints": [
-    "static/css/main.a9d630de.css",
-    "static/js/main.a62f14d5.js"
+    "static/css/main.ff7b731c.css",
+    "static/js/main.9faa41f9.js"
   ]
 }
