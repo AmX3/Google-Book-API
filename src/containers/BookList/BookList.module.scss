@@ -6,7 +6,7 @@
     &__Heading {
         text-align: center;
         font-family: $heading-font;
-        @include text-style(18px, 350, 27px, $spacing: 0.02em);
+        @include text-style(18px, 300, 27px, $spacing: 0.02em);
         padding-bottom: 40px;
     }
 
@@ -14,5 +14,19 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+    }
+
+    @media (min-width: ($phone + 1)) and (max-width: $tablet-portrait) {
+        &__Grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            margin: 0;
+        }
+    }
+    @media (max-width: ($phone)) {
+        &__Grid {
+            @include flex($flex-wrap: wrap);
+            margin: 0;
+        }
     }
 }

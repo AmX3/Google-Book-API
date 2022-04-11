@@ -1,3 +1,5 @@
+@import "./palette.scss";
+
 @mixin flex(
     $just-cont: space-between,
     $align-itm: center,
@@ -44,4 +46,28 @@
 @mixin height-and-width($height, $width) {
     height: $height;
     width: $width;
+}
+
+@mixin phone {
+    @media only screen and (max-width: ($phone)) {
+        @content;
+    }
+}
+
+@mixin tablet-portrait {
+    @media only screen and (min-width: ($phone + 1px)) and(max-width: ($tablet-portrait)) {
+        @content;
+    }
+}
+
+@mixin tablet-landscape {
+    @media only screen and (min-width: ($tablet-portrait + 1px)) and (max-width: ($tablet-landscape)) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media only screen and (min-width: ($tablet-landscape + 1px)) {
+        @content;
+    }
 }

@@ -6,7 +6,6 @@
     min-height: 45vh;
     background: url("./../../images/book.jpg");
     background-size: cover;
-    // background-position: center;
     background-repeat: no-repeat;
 
     &__Container {
@@ -29,6 +28,18 @@
         @include text-style(18px, 400, 27px, $spacing: 0.02em);
     }
 
+    @media (min-width: ($phone + 1)) and (max-width: $tablet-portrait) {
+        &__Label {
+            display: none;
+        }
+    }
+
+    @media (max-width: ($phone)) {
+        &__Label {
+            display: none;
+        }
+    }
+
     &__Icon {
         color: $box-shadow;
     }
@@ -39,5 +50,34 @@
         width: 100%;
         @include text-style(16px, 300, 27px, $spacing: 0.02em);
         font-family: $body-font;
+    }
+    @media (min-width: ($phone + 1)) and (max-width: $tablet-portrait) {
+        &__Container {
+            width: 50%;
+            margin-top: 20px;
+        }
+    }
+    @media (max-width: ($phone)) {
+        &__Container {
+            width: 33%;
+            margin-top: 20px;
+        }
+    }
+}
+
+@media (min-width: ($phone + 1)) and (max-width: $tablet-portrait) {
+    .Searchbar {
+        background: url("./../../images/line.jpg");
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+@media (max-width: ($phone)) {
+    .Searchbar {
+        background: url("./../../images/line.jpg");
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 }

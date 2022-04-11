@@ -5,7 +5,7 @@
     border-radius: 30px;
     @include flex($flx-dir: column, $just-cont: space-evenly);
     transition: all 0.25s;
-    border: 1px solid $search-border;
+    border: 2px solid $search-border;
     padding: 15px;
 
     &__Bookmark {
@@ -69,8 +69,6 @@
     &__Container {
         display: grid;
         grid-template-columns: 1fr 2fr;
-
-        // background: url("./../../images/modal.jpg");
     }
     &__Image {
         height: 300px;

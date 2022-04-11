@@ -9,7 +9,8 @@ const BookList = ({ books, toggleBookmark }) => {
     return (
         <div className={styles.BookList}>
             <h4 className={styles.BookList__Heading}>
-                Currently displayed: {books.length} books
+                <strong>Currently displayed: </strong>
+                {books.length} books
             </h4>
             <div className={styles.BookList__Grid}>
                 {books.map((book) => {

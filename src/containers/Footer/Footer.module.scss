@@ -7,11 +7,23 @@
     left: 0;
     bottom: 0;
     right: 0;
-    @include flex($just-cont: end);
+    @include flex($just-cont: flex-end);
     position: fixed;
 
+    &__Circle {
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        background: $navbar-background;
+        @include flex($just-cont: center);
+    }
+
     &__ScrollUp {
-        margin: 20px;
         color: navy;
+        transition: all 0.25s;
+    }
+
+    &__ScrollUp:hover {
+        transform: scale(1.1);
     }
 }
