@@ -2,22 +2,30 @@
 @import "./../../assets/palette.scss";
 
 .Navbar {
-    position: fixed;
     transition: all 0.5s;
     top: 0;
     left: 0;
-    z-index: 1000;
     width: 100%;
-    @include flex($just-cont: flex-end);
-    height: 5%;
     background: $navbar-background;
+
+    &__Container {
+        @include flex;
+    }
+
+    &__Brand {
+        font-family: $heading-font;
+        @include text-style(2em, bold, none);
+        color: navy;
+        padding: 0.5em 2em;
+    }
 
     &__List {
         list-style-type: none;
+        @include flex($just-cont: flex-end);
     }
 
     &__Links {
-        margin: 50px;
+        margin: 0 50px;
         color: $black;
         @include text-style(14px, 400, 18px, $spacing: 0.02em);
         font-family: $heading-font;

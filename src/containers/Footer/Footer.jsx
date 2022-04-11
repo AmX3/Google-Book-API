@@ -1,16 +1,18 @@
 import styles from "./Footer.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLongArrowAltUp } from "@fortawesome/free-solid-svg-icons";
 const Footer = () => {
+    const scrollUp = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
     return (
         <div className={styles.Footer}>
-            <p>
-                Built by:{" "}
-                <a
-                    className={styles.Footer__Link}
-                    href="https://amx3.github.io/Personal-Portfolio/"
-                    target="_blank">
-                    Amelia
-                </a>
-            </p>
+            <FontAwesomeIcon
+                icon={faLongArrowAltUp}
+                className={styles.Footer__ScrollUp}
+                onClick={scrollUp}
+                size="3x"
+            />
         </div>
     );
 };
