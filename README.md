@@ -2,6 +2,8 @@
 
 ## Aim
 
+The Google Books API was used to construct a web UI application using React.
+
 ## Live Site
 
 **Deployed Site** : https://amx3.github.io/Google-Book-API/
