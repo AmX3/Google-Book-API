@@ -1,9 +1,8 @@
 import React from "react";
-import styles from "./SavedBook.module.scss";
 import { useState, useEffect } from "react";
 import BookList from "../BookList";
 
-const SavedBook = ({ books }) => {
+const SavedBook = ({ books, toggleBookmark }) => {
     // returning selected books
     const [savedBook, setSavedBook] = useState(
         books.filter((book) => book.isSelected)
@@ -15,7 +14,7 @@ const SavedBook = ({ books }) => {
     });
     return (
         <div>
-            <BookList books={savedBook} toggleBookmark />
+            <BookList books={savedBook} toggleBookmark={toggleBookmark} />
         </div>
     );
 };

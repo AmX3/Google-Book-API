@@ -9,8 +9,8 @@ const Searchbar = ({ onSubmit, setSearch }) => {
     const [searchValue, setSearchValue] = useState("");
     // function that update the state of the value using the state searchValue variable
     const handleSearchChange = (e) => {
-        setSearch(e.target.value);
         setSearchValue(e.target.value);
+        setSearch(e.target.value);
     };
 
     const handleResult = () => {
@@ -18,7 +18,7 @@ const Searchbar = ({ onSubmit, setSearch }) => {
     };
 
     return (
-        <form className={styles.Searchbar}>
+        <div className={styles.Searchbar}>
             <img src={Google} alt="googleLogo" className={styles.Home__Image} />
             <label className={styles.Searchbar__Label} htmlFor="searchInput">
                 Search for a Book:
@@ -38,7 +38,7 @@ const Searchbar = ({ onSubmit, setSearch }) => {
                     size="lg"
                 />
             </div>
-        </form>
+        </div>
     );
 };
 
